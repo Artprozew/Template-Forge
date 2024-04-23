@@ -1,10 +1,6 @@
-package net.linkart.variabletorches;
+package net.template.templatemod;
 
 import com.mojang.logging.LogUtils;
-import net.linkart.variabletorches.block.ModBlocks;
-import net.linkart.variabletorches.item.ModItems;
-import net.minecraft.client.Minecraft;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -18,19 +14,16 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(VariableTorches.MODID)
-public class VariableTorches
+@Mod(TemplateMod.MODID)
+public class TemplateMod
 {
-    public static final String MODID = "variabletorches";
+    public static final String MODID = "templatemod";
     public static final Logger LOGGER = LogUtils.getLogger();
 
 
-    public VariableTorches()
+    public TemplateMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -46,9 +39,7 @@ public class VariableTorches
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-            event.accept(ModBlocks.SPRUCE_TORCH);
-        }
+
     }
 
 

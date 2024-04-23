@@ -1,8 +1,7 @@
-package net.linkart.variabletorches.block;
+package net.template.templatemod.block;
 
-import net.linkart.variabletorches.VariableTorches;
-import net.linkart.variabletorches.item.ModItems;
-import net.minecraft.core.particles.ParticleType;
+import net.template.templatemod.TemplateMod;
+import net.template.templatemod.item.ModItems;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -19,9 +18,9 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, VariableTorches.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, TemplateMod.MODID);
 
-    public static final RegistryObject<Block> SPRUCE_TORCH = registerBlock("spruce_torch",
+    public static final RegistryObject<Block> TEMPLATE_BLOCK = registerBlock("template_block",
             () -> new TorchBlock(BlockBehaviour.Properties.copy(Blocks.TORCH), ParticleTypes.FLAME));
 
     private static <T extends Block> RegistryObject<T> registerBlock(final String name, Supplier<T> block) {
